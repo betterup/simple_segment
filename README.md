@@ -112,7 +112,7 @@ analytics = SimpleSegment::Client.new(
 
 ### Set diffrent URL
 
-You can set the base URL to be other than 'http://api.segment.io/'.
+You can set the base URL to be other than 'https://api.segment.io/'.
 
 ```ruby
 analytics = SimpleSegment::Client.new(
