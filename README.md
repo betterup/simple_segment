@@ -110,6 +110,17 @@ analytics = SimpleSegment::Client.new(
 )
 ```
 
+### Set diffrent URL
+
+You can set the base URL to be other than 'http://api.segment.io/'.
+
+```ruby
+analytics = SimpleSegment::Client.new(
+  write_key: 'YOUR_WRITE_KEY',
+  base_url: 'https://other.than.segment.io/',
+)
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

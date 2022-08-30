@@ -7,7 +7,7 @@ module SimpleSegment
     include SimpleSegment::Utils
     include SimpleSegment::Logging
 
-    attr_reader :write_key, :on_error, :stub, :logger, :http_options
+    attr_reader :write_key, :on_error, :stub, :logger, :http_options, :base_url
 
     def initialize(settings = {})
       symbolized_settings = symbolize_keys(settings)
@@ -17,6 +17,7 @@ module SimpleSegment
       @logger = default_logger(symbolized_settings[:logger])
       @http_options = { use_ssl: true }
                       .merge(symbolized_settings[:http_options] || {})
+      @base_url = symbolized_settings[:base_url] || 'https://api.segment.io'
       raise ArgumentError, 'Missing required option :write_key' \
         unless @write_key
     end

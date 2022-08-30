@@ -49,4 +49,9 @@ describe SimpleSegment::Configuration do
     config = described_class.new(write_key: 'test', http_options: { read_timeout: 42 })
     expect(config.http_options).to eq(use_ssl: true, read_timeout: 42)
   end
+
+  it 'accepts a base_url' do
+    config = described_class.new(write_key: 'test', base_url: 'test')
+    expect(config.base_url).to eq('test')
+  end
 end
